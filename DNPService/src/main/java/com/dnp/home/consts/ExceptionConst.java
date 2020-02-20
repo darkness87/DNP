@@ -73,5 +73,5 @@ public class ExceptionConst {
 	public static final int PROCESS_TAG_FAILED					= 2022;
 	public static final int INVALID_TAG_NAME					= 2023;
 
-	// AMI System 환경변수 유효성 (26xx) --> ami.properties
+	// DNP Service 환경변수 유효성 (26xx) --> dnp.properties
 }

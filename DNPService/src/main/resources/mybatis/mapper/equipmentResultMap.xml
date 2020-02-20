@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.cnu.amisystem.mapper.EquipMapper">
-	<resultMap id="dcuMap" type="com.cnu.amisystem.vo.DcuVO">
+<mapper namespace="com.dnp.home.mapper.EquipMapper">
+	<resultMap id="dcuMap" type="com.dnp.home.vo.DcuVO">
 		<result property="dcuId" column="DID"/>
 		<result property="regionSeq" column="REGION_SEQ"/>
 		<result property="fepIp" column="FEP_IP"/>
@@ -50,7 +50,7 @@
 		<result property="area2" column="AREA2"/>
 		<result property="area3" column="AREA3"/>
 	</resultMap>
-	<resultMap id="meterMap" type="com.cnu.amisystem.vo.MeterVO">
+	<resultMap id="meterMap" type="com.dnp.home.vo.MeterVO">
 		<result property="dcuId" column="DID"/>
 		<result property="meterId" column="METER_ID"/>
 		<result property="macAddr" column="MAC_ADDR"/>
@@ -72,7 +72,7 @@
 		<result property="area2" column="AREA2"/>
 		<result property="area3" column="AREA3"/>
 	</resultMap>
-	<resultMap id="transformerMap" type="com.cnu.amisystem.vo.TransformerVO">
+	<resultMap id="transformerMap" type="com.dnp.home.vo.TransformerVO">
 		<result property="dcuId" column="DID"/>
 		<result property="transformerId" column="TID"/>
 		<result property="transformerVolumeA" column="KVA_A"/>

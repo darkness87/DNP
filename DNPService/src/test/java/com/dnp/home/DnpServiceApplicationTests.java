@@ -1,4 +1,4 @@
-package com.cnu.amisystem;
+package com.dnp.home;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class AmiSystemApplicationTests {
+public class DnpServiceApplicationTests {
 
 	@Test
 	public void contextLoads() {

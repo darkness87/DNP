@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.dnp.home.consts.AMIConst;
+import com.dnp.home.consts.DNPConst;
 import com.dnp.home.consts.ExceptionConst;
 import com.dnp.home.exception.AMIException;
 
@@ -35,7 +35,7 @@ public class AbsController {
 	protected Map<String, String> getRSAkey(HttpServletRequest request) throws AMIException {
 		try {
 			KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
-			generator.initialize(AMIConst.KEY_SIZE);
+			generator.initialize(DNPConst.KEY_SIZE);
 
 			KeyPair keyPair = generator.genKeyPair();
 			KeyFactory keyFactory = KeyFactory.getInstance("RSA");

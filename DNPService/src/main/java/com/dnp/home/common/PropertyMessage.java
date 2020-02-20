@@ -15,7 +15,7 @@ public class PropertyMessage {
 
 	public PropertyMessage() {
 		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-		messageSource.setBasename("classpath:com/cnu/amisystem/viewmessages");
+		messageSource.setBasename("classpath:com/dnp/home/viewmessages");
 		PropertyMessage.messageSourceAccessor = new MessageSourceAccessor(messageSource);
 	}
 
@@ -25,8 +25,8 @@ public class PropertyMessage {
 
 //	public ReloadableResourceBundleMessageSource messageSource() {
 //		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-//		messageSource.setBasename("classpath:com/cnu/amisystem/viewmessages");
-//		System.out.println("message : " + new MessageSourceAccessor(messageSource).getMessage("ami.product.name"));
+//		messageSource.setBasename("classpath:com/dnp/home/viewmessages");
+//		System.out.println("message : " + new MessageSourceAccessor(messageSource).getMessage("dnp.product.name"));
 //		return messageSource;
 //	}
 //

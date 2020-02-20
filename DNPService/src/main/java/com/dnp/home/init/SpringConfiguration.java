@@ -34,7 +34,7 @@ public class SpringConfiguration implements WebMvcConfigurer {
 	@Bean
 	public ReloadableResourceBundleMessageSource messageSource() {
 		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-		messageSource.setBasename("classpath:com/cnu/amisystem/viewmessages");
+		messageSource.setBasename("classpath:com/dnp/home/viewmessages");
 		return messageSource;
 	}
 

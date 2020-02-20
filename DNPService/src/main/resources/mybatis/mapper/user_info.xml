@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.cnu.amisystem.mapper.UserMapper">
-	<resultMap id="userMap" type="com.cnu.amisystem.vo.UserVO">
+<mapper namespace="com.dnp.home.mapper.UserMapper">
+	<resultMap id="userMap" type="com.dnp.home.vo.UserVO">
 		<result property="loginId" column="UID"/>
 		<result property="password" column="UPW"/>
 		<result property="type" column="UTYPE"/>
 		<result property="name" column="UNAME"/>
 		<result property="registDate" column="WDATE"/>
 		<result property="lastDate" column="LDATE"/>
-		<result property="createDateFormat" column="create_date" typeHandler="com.cnu.amisystem.vo.mybatis.support.DateToStringTypeHandler"/>
-		<result property="modifyDateFormat" column="modify_date" typeHandler="com.cnu.amisystem.vo.mybatis.support.DateToStringTypeHandler"/>
-		<result property="reportDateFormat" column="report_date" typeHandler="com.cnu.amisystem.vo.mybatis.support.DateToStringTypeHandler"/>
-		<result property="endDateFormat" column="end_date" typeHandler="com.cnu.amisystem.vo.mybatis.support.DateToStringTypeHandler"/>
+		<result property="createDateFormat" column="create_date" typeHandler="com.dnp.home.vo.mybatis.support.DateToStringTypeHandler"/>
+		<result property="modifyDateFormat" column="modify_date" typeHandler="com.dnp.home.vo.mybatis.support.DateToStringTypeHandler"/>
+		<result property="reportDateFormat" column="report_date" typeHandler="com.dnp.home.vo.mybatis.support.DateToStringTypeHandler"/>
+		<result property="endDateFormat" column="end_date" typeHandler="com.dnp.home.vo.mybatis.support.DateToStringTypeHandler"/>
 	</resultMap>
 	<sql id="User-COLUMNS">
 		UID, UPW, UTYPE, UNAME, WDATE, LDATE
@@ -46,6 +46,6 @@
 	</settings>
 
 	<typeAliases>
-		<typeAlias alias="userVO" type="com.cnu.amisystem.vo.UserInfoVO" />
+		<typeAlias alias="userVO" type="com.dnp.home.vo.UserInfoVO" />
 	</typeAliases>
 </configuration> -->

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="application/javascript; charset=utf-8" pageEncoding="utf-8"%>
 <%@include file="../../jsp/include/include.jsp"%>
-<fmt:setBundle basename="com.cnu.amisystem.viewmessages" />
+<fmt:setBundle basename="com.dnp.home.viewmessages" />
 /**
 // 아래의 5가지 리소스 파일은 line수와 value값을 동일하게 맞춰준다.						//
 // 1. src/main/resources/com/hs/square/viewmessages_en.properties	//

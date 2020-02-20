@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import com.dnp.home.consts.AMIConst;
+import com.dnp.home.consts.DNPConst;
 
 @Component
 public class SessionInterceptor extends HandlerInterceptorAdapter {
@@ -27,7 +27,7 @@ public class SessionInterceptor extends HandlerInterceptorAdapter {
 		}
 
 		KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
-		generator.initialize(AMIConst.KEY_SIZE);
+		generator.initialize(DNPConst.KEY_SIZE);
 
 		KeyPair keyPair = generator.genKeyPair();
 		KeyFactory keyFactory = KeyFactory.getInstance("RSA");

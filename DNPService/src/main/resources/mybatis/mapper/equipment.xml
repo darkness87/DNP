@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.cnu.amisystem.mapper.EquipMapper">
+<mapper namespace="com.dnp.home.mapper.EquipMapper">
 	<sql id="Dcu-COLUMNS">
 		DID, REGION_SEQ, FEP_IP, FEP_PORT, DCU_IP,
 		DCU_PORT, MAC_A, MAC_B, MAC_C, ITIME, 

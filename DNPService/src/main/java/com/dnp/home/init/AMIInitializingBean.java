@@ -23,7 +23,7 @@ public class AMIInitializingBean implements InitializingBean {
 	private Properties prop = new Properties();
 
 	private Resource[] resources = new ClassPathResource[] {
-		new ClassPathResource("ami.properties")
+		new ClassPathResource("dnp.properties")
 	};
 
 	@Autowired
