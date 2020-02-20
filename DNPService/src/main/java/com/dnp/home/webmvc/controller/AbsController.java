@@ -24,7 +24,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.dnp.home.consts.DNPConst;
 import com.dnp.home.consts.ExceptionConst;
-import com.dnp.home.exception.AMIException;
+import com.dnp.home.exception.DNPException;
 
 
 
@@ -32,7 +32,7 @@ public class AbsController {
 	static Logger logger = LogManager.getLogger(AbsController.class);
 	static final String PROPERTIES_FILE_NAME = "square.properties";
 
-	protected Map<String, String> getRSAkey(HttpServletRequest request) throws AMIException {
+	protected Map<String, String> getRSAkey(HttpServletRequest request) throws DNPException {
 		try {
 			KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
 			generator.initialize(DNPConst.KEY_SIZE);
@@ -62,13 +62,13 @@ public class AbsController {
 
 			return map;
 		} catch (NoSuchAlgorithmException e) {
-			throw new AMIException(ExceptionConst.RSA_NO_SUCH_ALGORITHM);
+			throw new DNPException(ExceptionConst.RSA_NO_SUCH_ALGORITHM);
 		} catch (InvalidKeySpecException e) {
-			throw new AMIException(ExceptionConst.RSA_INVALID_KEY_SPEC);
+			throw new DNPException(ExceptionConst.RSA_INVALID_KEY_SPEC);
 		}
 	}
 
-	protected String decryptRSA(PrivateKey privateKey, String securedValue) throws AMIException {
+	protected String decryptRSA(PrivateKey privateKey, String securedValue) throws DNPException {
 		try {
 			Cipher cipher = Cipher.getInstance("RSA");
 			byte[] encryptedBytes = hexToByteArray(securedValue);
@@ -78,12 +78,12 @@ public class AbsController {
 
 			return decryptedValue;
 		} catch (NoSuchAlgorithmException e) {
-			throw new AMIException(ExceptionConst.RSA_NO_SUCH_ALGORITHM, e);
+			throw new DNPException(ExceptionConst.RSA_NO_SUCH_ALGORITHM, e);
 		} catch (InvalidKeyException e) {
-			throw new AMIException(ExceptionConst.RSA_INVALID_KEY_SPEC, e);
+			throw new DNPException(ExceptionConst.RSA_INVALID_KEY_SPEC, e);
 		} catch (NoSuchPaddingException | IllegalBlockSizeException
 				| BadPaddingException | UnsupportedEncodingException e) {
-			throw new AMIException(ExceptionConst.RSA_DECRYPTION_ERROR, e);
+			throw new DNPException(ExceptionConst.RSA_DECRYPTION_ERROR, e);
 		}
 	}
 

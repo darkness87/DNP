@@ -42,7 +42,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 	public void onAuthenticationSuccess(HttpServletRequest request
 										, HttpServletResponse response
 										, Authentication authentication) throws IOException, ServletException {
-		String loginSuccessUrl = PropertyConfig.getString("ami.security.login.success.url");
+		String loginSuccessUrl = PropertyConfig.getString("dnp.security.login.success.url");
 		response.setStatus(HttpStatus.OK.value());
 		response.setContentType(MediaType.APPLICATION_JSON_VALUE);
 		response.setCharacterEncoding("UTF-8");

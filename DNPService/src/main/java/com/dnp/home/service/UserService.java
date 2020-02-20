@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.dnp.home.consts.ExceptionConst;
-import com.dnp.home.exception.AMIException;
+import com.dnp.home.exception.DNPException;
 import com.dnp.home.mapper.UserMapper;
 import com.dnp.home.vo.UserVO;
 
@@ -24,14 +24,14 @@ public class UserService {
 	@Autowired
 	UserMapper userMapper;
 
-	public UserVO addUser(String loginId, String password, String name) throws AMIException {
+	public UserVO addUser(String loginId, String password, String name) throws DNPException {
 		UserVO userVO = new UserVO(loginId, new BCryptPasswordEncoder().encode(password), name);
 		try {
 			userMapper.insertUser(userVO);
 
 			return userVO;
 		} catch(DuplicateKeyException e) {
-			throw new AMIException(ExceptionConst.DUPLICATE_USER);
+			throw new DNPException(ExceptionConst.DUPLICATE_USER);
 		}
 	}
 

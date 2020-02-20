@@ -19,7 +19,7 @@ public class SpringConfiguration implements WebMvcConfigurer {
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		List<String> excludeList = PropertyConfig.getList("ami.interceptor.exclude.list");
+		List<String> excludeList = PropertyConfig.getList("dnp.interceptor.exclude.list");
 		registry.addInterceptor(httpInterceptor)
 				.addPathPatterns("/**")
 				.excludePathPatterns(excludeList);

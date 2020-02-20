@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dnp.home.common.PropertyConfig;
 import com.dnp.home.consts.ExceptionConst;
-import com.dnp.home.exception.AMIException;
+import com.dnp.home.exception.DNPException;
 import com.dnp.home.service.UserService;
 import com.dnp.home.vo.ResponseVO;
 import com.dnp.home.vo.UserVO;
@@ -45,7 +45,7 @@ public class UserController extends AbsController {
 	}
 
 	@RequestMapping("/test")
-	public UserVO test(@RequestParam HashMap<String, String> param) throws AMIException {
+	public UserVO test(@RequestParam HashMap<String, String> param) throws DNPException {
 		String id = param.get("id");
 		String pw = param.get("pw");
 		UserVO userVO = new UserVO(id, pw);
@@ -54,8 +54,8 @@ public class UserController extends AbsController {
 	}
 
 	@RequestMapping("/errorTest")
-	public String errorTest(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws AMIException {
-		throw new AMIException("로그인이 필요한 서비스입니둥");
+	public String errorTest(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws DNPException {
+		throw new DNPException("로그인이 필요한 서비스입니둥");
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -69,7 +69,7 @@ public class UserController extends AbsController {
 	}
 
 	@RequestMapping(value = "/addAccount")
-	public @ResponseBody ResponseVO addAccount(HttpServletRequest request, HttpServletResponse response, @RequestParam HashMap<String, String> param) throws AMIException {
+	public @ResponseBody ResponseVO addAccount(HttpServletRequest request, HttpServletResponse response, @RequestParam HashMap<String, String> param) throws DNPException {
 		int resultCode = ExceptionConst.SUCCESS;
 
 		String securedUserId = param.get("loginId");
@@ -88,10 +88,10 @@ public class UserController extends AbsController {
 			String password = decryptRSA(privateKey, securedPassword);
 //			UserVO userVO = new UserVO(loginId, password, name);
 			UserVO userVO = userService.addUser(loginId, password, name);
-			response.setHeader("Location", PropertyConfig.getString("ami.security.login.success.url"));
+			response.setHeader("Location", PropertyConfig.getString("dnp.security.login.success.url"));
 
 			return new ResponseVO(resultCode, userVO);
-		} catch (AMIException e) {
+		} catch (DNPException e) {
 			logger.error(e.getMessage(), e);
 			return new ResponseVO(e);
 		}

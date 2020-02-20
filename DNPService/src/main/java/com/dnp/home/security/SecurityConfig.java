@@ -68,20 +68,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		String[] permitAll = PropertyConfig.getString("ami.security.permit.all").split(",");
-		String[] permitAdmin = PropertyConfig.getString("ami.security.permit.admin").split(",");
-		String[] permitUser = PropertyConfig.getString("ami.security.permit.user").split(",");
+		String[] permitAll = PropertyConfig.getString("dnp.security.permit.all").split(",");
+		String[] permitAdmin = PropertyConfig.getString("dnp.security.permit.admin").split(",");
+		String[] permitUser = PropertyConfig.getString("dnp.security.permit.user").split(",");
 		http.authorizeRequests()
 			.antMatchers(permitAll).permitAll()
 			.antMatchers(permitAdmin).hasRole("ADMIN")			// 내부적으로 접두어 "ROLE_"가 붙는다.
 			.antMatchers(permitUser).hasAnyRole("ADMIN", "USER")	// 내부적으로 접두어 "ROLE_"가 붙는다.
 			.anyRequest().authenticated().and().addFilterBefore(authenticationFilter(), UsernamePasswordAuthenticationFilter.class);
 
-		String loginPage = PropertyConfig.getString("ami.security.login.page");
-		String loginProcessingUrl = PropertyConfig.getString("ami.security.login.processing.url");
-		String usernameParameter = PropertyConfig.getString("ami.security.parameter.id");
-		String passwordParameter = PropertyConfig.getString("ami.security.parameter.pw");
-//		String failureUrl = PropertyConfig.getString("ami.security.failure.url");
+		String loginPage = PropertyConfig.getString("dnp.security.login.page");
+		String loginProcessingUrl = PropertyConfig.getString("dnp.security.login.processing.url");
+		String usernameParameter = PropertyConfig.getString("dnp.security.parameter.id");
+		String passwordParameter = PropertyConfig.getString("dnp.security.parameter.pw");
+//		String failureUrl = PropertyConfig.getString("dnp.security.failure.url");
 		http.formLogin()
 			.loginPage(loginPage)					// default
 			.loginProcessingUrl(loginProcessingUrl)
@@ -93,8 +93,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.successHandler(loginSuccessHandler)
 			.permitAll().and();
 
-		String logoutProcessingUrl = PropertyConfig.getString("ami.security.logout.processing.url");
-		String logoutSuccessUrl = PropertyConfig.getString("ami.security.logout.success.url");
+		String logoutProcessingUrl = PropertyConfig.getString("dnp.security.logout.processing.url");
+		String logoutSuccessUrl = PropertyConfig.getString("dnp.security.logout.success.url");
 		http.logout().deleteCookies("remove")
 			.invalidateHttpSession(true)			// 로그 아웃시 세션을 무효화
 			.clearAuthentication(true)				// 로그 아웃시 인증정보를 지움

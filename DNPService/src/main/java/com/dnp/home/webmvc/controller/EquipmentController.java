@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dnp.home.consts.ExceptionConst;
-import com.dnp.home.exception.AMIException;
+import com.dnp.home.exception.DNPException;
 import com.dnp.home.service.EquipService;
 import com.dnp.home.util.StringUtil;
 import com.dnp.home.vo.ListVO;
@@ -28,17 +28,17 @@ public class EquipmentController {
 	EquipService equipService; 
 
 	@RequestMapping("/")	// DCU
-	public String equip() throws AMIException {
+	public String equip() throws DNPException {
 		return "equip/body";
 	}
 
 	@RequestMapping("/dcu")	// DCU
-	public String dcu() throws AMIException {
+	public String dcu() throws DNPException {
 		return "equip/dcu";
 	}
 
 	@RequestMapping("/getDcuList")	// DCU
-	public @ResponseBody ResponseVO getDcuList() throws AMIException {
+	public @ResponseBody ResponseVO getDcuList() throws DNPException {
 		int resultCode = ExceptionConst.SUCCESS;
 
 		ListVO listVO = StringUtil.convertListToObject(equipService.getDcuList());
@@ -46,17 +46,17 @@ public class EquipmentController {
 	}
 
 	@RequestMapping("/meter")	// METER
-	public String meter() throws AMIException {
+	public String meter() throws DNPException {
 		return "equip/meter";
 	}
 
 	@RequestMapping("/transformer")	// 변압기
-	public String transformer() throws AMIException {
+	public String transformer() throws DNPException {
 		return "equip/transformer";
 	}
 
 	@RequestMapping("/hierarchy")	// 계층구조
-	public String hierarchy() throws AMIException {
+	public String hierarchy() throws DNPException {
 		return "equip/hierarchy";
 	}
 }

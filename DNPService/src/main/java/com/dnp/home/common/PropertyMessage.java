@@ -71,7 +71,7 @@ public class PropertyMessage {
 
 	public static String getCodeMessage(int key) {
 		try {
-			return messageSourceAccessor.getMessage("ami.code.message." + Integer.toString(key));
+			return messageSourceAccessor.getMessage("dnp.code.message." + Integer.toString(key));
 		} catch (NullPointerException e) {
 			return null;
 		}
@@ -79,31 +79,31 @@ public class PropertyMessage {
 
 	public static String getCodeMessage(int key, String value) {
 		try {
-			return messageSourceAccessor.getMessage("ami.code.message." + Integer.toString(key)).replace("{0}", value);
+			return messageSourceAccessor.getMessage("dnp.code.message." + Integer.toString(key)).replace("{0}", value);
 		} catch (NoSuchMessageException e) {
 			logger.error(e.getMessage());
-			return messageSourceAccessor.getMessage("ami.code.message." + Integer.toString(key));
+			return messageSourceAccessor.getMessage("dnp.code.message." + Integer.toString(key));
 		} catch (Exception e) {
 			logger.error(e.getMessage());
-			return messageSourceAccessor.getMessage("ami.code.message." + Integer.toString(key));
+			return messageSourceAccessor.getMessage("dnp.code.message." + Integer.toString(key));
 		}
 	}
 
 	public static String getCodeMessage(int key, String name, String value) {
 		try {
-			return messageSourceAccessor.getMessage("ami.code.message." + Integer.toString(key)).replace("{0}", name).replace("{1}", value);
+			return messageSourceAccessor.getMessage("dnp.code.message." + Integer.toString(key)).replace("{0}", name).replace("{1}", value);
 		} catch (NoSuchMessageException e) {
 			logger.error(e.getMessage());
-			return messageSourceAccessor.getMessage("ami.code.message." + Integer.toString(key));
+			return messageSourceAccessor.getMessage("dnp.code.message." + Integer.toString(key));
 		} catch (Exception e) {
 			logger.error(e.getMessage());
-			return messageSourceAccessor.getMessage("ami.code.message." + Integer.toString(key));
+			return messageSourceAccessor.getMessage("dnp.code.message." + Integer.toString(key));
 		}
 	}
 
 	public static String getCodeMessage(String key) {
 		try {
-			return messageSourceAccessor.getMessage("ami.code.message." + key);
+			return messageSourceAccessor.getMessage("dnp.code.message." + key);
 		} catch (NullPointerException e) {
 			return null;
 		}
@@ -111,25 +111,25 @@ public class PropertyMessage {
 
 	public static String getCodeMessage(String key, String value) {
 		try {
-			return messageSourceAccessor.getMessage("ami.code.message." + key).replace("{0}", value);
+			return messageSourceAccessor.getMessage("dnp.code.message." + key).replace("{0}", value);
 		} catch (NoSuchMessageException e) {
 			logger.error(e.getMessage());
-			return messageSourceAccessor.getMessage("ami.code.message." + key);
+			return messageSourceAccessor.getMessage("dnp.code.message." + key);
 		} catch (Exception e) {
 			logger.error(e.getMessage());
-			return messageSourceAccessor.getMessage("ami.code.message." + key);
+			return messageSourceAccessor.getMessage("dnp.code.message." + key);
 		}
 	}
 
 	public static String getCodeMessage(String key, String name, String value) {
 		try {
-			return messageSourceAccessor.getMessage("ami.code.message." + key).replace("{0}", name).replace("{1}", value);
+			return messageSourceAccessor.getMessage("dnp.code.message." + key).replace("{0}", name).replace("{1}", value);
 		} catch (NoSuchMessageException e) {
 			logger.error(e.getMessage());
-			return messageSourceAccessor.getMessage("ami.code.message." + key);
+			return messageSourceAccessor.getMessage("dnp.code.message." + key);
 		} catch (Exception e) {
 			logger.error(e.getMessage());
-			return messageSourceAccessor.getMessage("ami.code.message." + key);
+			return messageSourceAccessor.getMessage("dnp.code.message." + key);
 		}
 	}
 }

@@ -1,7 +1,7 @@
 package com.dnp.home.vo;
 
 import com.dnp.home.common.PropertyMessage;
-import com.dnp.home.exception.AMIException;
+import com.dnp.home.exception.DNPException;
 
 
 public class ResponseVO {
@@ -12,14 +12,14 @@ public class ResponseVO {
 	}
 
 	public ResponseVO(int resultCode) {
-		this(new AMIException(resultCode));
+		this(new DNPException(resultCode));
 	}
 
 	public ResponseVO(String resultCode) {
 		this(Integer.parseInt(resultCode));
 	}
 
-	public ResponseVO(AMIException e) {
+	public ResponseVO(DNPException e) {
 		String resultCode = e.getFaultCode();
 		String message = e.getMessage();
 

@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.dnp.home.exception.AMIException;
+import com.dnp.home.exception.DNPException;
 
 /**
  * 홈 > 설비관리
@@ -18,17 +18,17 @@ public class MeterController {
 	final Logger logger = LogManager.getLogger(MeterController.class);
 
 	@RequestMapping("/")	// DCU
-	public String equip() throws AMIException {
+	public String equip() throws DNPException {
 		return "meter/body";
 	}
 
 	@RequestMapping("/fixedMeter")	// 현재 / 정기 검침
-	public String fixedMeter() throws AMIException {
+	public String fixedMeter() throws DNPException {
 		return "meter/fixedMeter";
 	}
 
 	@RequestMapping("/maximumDemand")	// 현재 / 정기 최대수요
-	public String maximumDemand() throws AMIException {
+	public String maximumDemand() throws DNPException {
 		return "meter/maximumDemand";
 	}
 }

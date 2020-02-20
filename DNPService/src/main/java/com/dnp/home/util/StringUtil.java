@@ -12,85 +12,13 @@ import org.apache.logging.log4j.Logger;
 
 import com.dnp.home.common.PropertyMessage;
 import com.dnp.home.consts.ExceptionConst;
-import com.dnp.home.exception.AMIException;
+import com.dnp.home.exception.DNPException;
 import com.dnp.home.vo.ListVO;
 import com.dnp.home.vo.ResponseDataVO;
 
 
 public class StringUtil {
 	static Logger log = LogManager.getLogger(StringUtil.class);
-
-//	public static String getReducedString(String content, int length, int margin) throws Exception {
-//		if (log.isDebugEnabled()) {
-//			log.debug("START, content = " + content);
-//		}
-//		if (content == null)
-//			return content;
-//
-//		byte[] temp = content.getBytes(AMIConst.DEFAULT_ENCODING);
-//		StringBuffer result = new StringBuffer(length);
-//		if (temp.length < length) {
-//			result.append(content);
-//		} else {
-//			int receiverDelimLength = AMIConst.WORD_ELLIPSIS.getBytes(AMIConst.DEFAULT_ENCODING).length;
-//			temp = subbytes(content, 0, length - receiverDelimLength - margin, false);
-//			result = new StringBuffer(new String(temp).trim());
-//			result.append(AMIConst.WORD_ELLIPSIS);
-//		}
-//
-//		if (log.isDebugEnabled()) {
-//			log.debug("END, result = " + result.toString());
-//		}
-//		return result.toString();
-//	}
-
-//	public static byte[] subbytes(String src, int start, int len, boolean asCString) throws Exception {
-//		if (null == src) {
-//			return new byte[0];
-//		}
-//
-//		StringBuffer sbTemp = new StringBuffer(len);
-//		int tlen = 0;
-//
-//		CharacterIterator it = new StringCharacterIterator(src);
-//		char c;
-//
-//		if (start > 0) {
-//			int ts = 0;
-//
-//			c = it.first();
-//			for (; c != CharacterIterator.DONE; c = it.next()) {
-//				if (((int) c) > 0xff)
-//					ts += 3;
-//				else
-//					ts += 1;
-//				if (ts > start)
-//					break;
-//			}
-//		} else {
-//			c = it.first();
-//		}
-//
-//		for (; c != CharacterIterator.DONE; c = it.next()) {
-//			if (((int) c) > 0xff)
-//				tlen += 3;
-//			else
-//				tlen += 1;
-//
-//			if (tlen > len)
-//				break;
-//			sbTemp.append(c);
-//		}
-//
-//		if (asCString) {
-//			byte[] tempBytes = sbTemp.toString().getBytes(AMIConst.DEFAULT_ENCODING);
-//			byte[] bytes = new byte[tempBytes.length + 1];
-//			System.arraycopy(tempBytes, 0, bytes, 0, tempBytes.length);
-//			return bytes;
-//		} else {
-//			return sbTemp.toString().getBytes(AMIConst.DEFAULT_ENCODING);
-//		}
-//	}
 
 	public static String newLineToBR (String text) {
 		String nText = text.replaceAll("(?i)\n","<br>");
@@ -341,7 +269,7 @@ public class StringUtil {
 		return (byte) ((byte) Byte.valueOf(str) + (byte) '0');
 	}
 
-	public static ListVO convertListToObject(List<?> object) throws AMIException {
+	public static ListVO convertListToObject(List<?> object) throws DNPException {
 		ListVO listVO = new ListVO();
 		List<ResponseDataVO> list = new ArrayList<ResponseDataVO>();
 
@@ -349,7 +277,7 @@ public class StringUtil {
 			if (object != null) {
 				Object obj = object.get(0);
 				if (!(obj instanceof ResponseDataVO)) {
-					throw new AMIException(9999, "[" + object + "] 해당 객체는 ResponseDataVO를 상속받지 않은 객체이므로 사용하실 수 없습니다.");
+					throw new DNPException(9999, "[" + object + "] 해당 객체는 ResponseDataVO를 상속받지 않은 객체이므로 사용하실 수 없습니다.");
 				}
 
 				for(int i=0; i<object.size(); i++) {
@@ -364,7 +292,7 @@ public class StringUtil {
 			listVO = new ListVO();
 		} catch (Exception e) {
 			log.error(e.getMessage());
-			throw new AMIException(9999, "해당 객체는 ResponseDataVO를 상속받지 않은 객체이므로 사용하실 수 없습니다.");
+			throw new DNPException(9999, "해당 객체는 ResponseDataVO를 상속받지 않은 객체이므로 사용하실 수 없습니다.");
 		}
 
 		return listVO;
@@ -416,9 +344,9 @@ public class StringUtil {
 	 * </pre>
 	 * @param dateName 날짜형의 이름
 	 * @param date 날짜 스트링
-	 * @throws AMIException
+	 * @throws DNPException
 	 */
-	public static String validationDate(String dateName, String date) throws AMIException {
+	public static String validationDate(String dateName, String date) throws DNPException {
 		int resultCode = ExceptionConst.VALIDATION_COMMON;
 		String resultMessage = PropertyMessage.getCodeMessage(ExceptionConst.VALIDATION_COMMON);
 
@@ -427,22 +355,22 @@ public class StringUtil {
 			resultMessage = PropertyMessage.getCodeMessage(ExceptionConst.VALIDATION_DATE
 					, dateName, date);
 
-			throw new AMIException(resultCode, resultMessage);
+			throw new DNPException(resultCode, resultMessage);
 		} else if (date.split("\\.")[0].length() != 4) {
 			resultCode = ExceptionConst.VALIDATION_DATE;
 			resultMessage = PropertyMessage.getCodeMessage(ExceptionConst.VALIDATION_DATE);
 
-			throw new AMIException(resultCode, resultMessage);
+			throw new DNPException(resultCode, resultMessage);
 		} else if (date.split("\\.")[1].length() != 2) {
 			resultCode = ExceptionConst.VALIDATION_DATE;
 			resultMessage = PropertyMessage.getCodeMessage(ExceptionConst.VALIDATION_DATE);
 
-			throw new AMIException(resultCode, resultMessage);
+			throw new DNPException(resultCode, resultMessage);
 		} else if (date.split("\\.")[2].length() != 2) {
 			resultCode = ExceptionConst.VALIDATION_DATE;
 			resultMessage = PropertyMessage.getCodeMessage(ExceptionConst.VALIDATION_DATE);
 
-			throw new AMIException(resultCode, resultMessage);
+			throw new DNPException(resultCode, resultMessage);
 		}
 
 		return date;

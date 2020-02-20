@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.dnp.home.consts.ExceptionConst;
-import com.dnp.home.exception.AMIException;
+import com.dnp.home.exception.DNPException;
 
 public class SecurityAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 //	public SecurityAuthenticationFilter(String url, AuthenticationManager authenticationManager) {
@@ -72,7 +72,7 @@ public class SecurityAuthenticationFilter extends UsernamePasswordAuthentication
 			String loginId = decryptRSA(privateKey, secureLoginId);
 
 			return loginId;
-		} catch (AMIException e) {
+		} catch (DNPException e) {
 			return secureLoginId;
 		}
 	}
@@ -88,12 +88,12 @@ public class SecurityAuthenticationFilter extends UsernamePasswordAuthentication
 			String password = decryptRSA(privateKey, securePassword);
 
 			return password;
-		} catch (AMIException e) {
+		} catch (DNPException e) {
 			return securePassword;
 		}
 	}
 
-	private String decryptRSA(PrivateKey privateKey, String securedValue) throws AMIException {
+	private String decryptRSA(PrivateKey privateKey, String securedValue) throws DNPException {
 		try {
 			Cipher cipher = Cipher.getInstance("RSA");
 			byte[] encryptedBytes = hexToByteArray(securedValue);
@@ -103,12 +103,12 @@ public class SecurityAuthenticationFilter extends UsernamePasswordAuthentication
 
 			return decryptedValue;
 		} catch (NoSuchAlgorithmException e) {
-			throw new AMIException(ExceptionConst.RSA_NO_SUCH_ALGORITHM, e);
+			throw new DNPException(ExceptionConst.RSA_NO_SUCH_ALGORITHM, e);
 		} catch (InvalidKeyException e) {
-			throw new AMIException(ExceptionConst.RSA_INVALID_KEY_SPEC, e);
+			throw new DNPException(ExceptionConst.RSA_INVALID_KEY_SPEC, e);
 		} catch (NoSuchPaddingException | IllegalBlockSizeException
 				| BadPaddingException | UnsupportedEncodingException e) {
-			throw new AMIException(ExceptionConst.RSA_DECRYPTION_ERROR, e);
+			throw new DNPException(ExceptionConst.RSA_DECRYPTION_ERROR, e);
 		}
 	}
 

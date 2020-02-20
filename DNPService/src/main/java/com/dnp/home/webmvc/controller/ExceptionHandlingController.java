@@ -8,13 +8,13 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.dnp.home.exception.AMIException;
+import com.dnp.home.exception.DNPException;
 
 @RequestMapping("/error")
 @Controller
 public class ExceptionHandlingController {
-	@ExceptionHandler(AMIException.class)
-	public String loginAuthError(HttpServletRequest req, HttpServletResponse res, ModelMap model, AMIException e) {
+	@ExceptionHandler(DNPException.class)
+	public String loginAuthError(HttpServletRequest req, HttpServletResponse res, ModelMap model, DNPException e) {
 		model.addAttribute("exception", e);
 		model.addAttribute("url", req.getRequestURL());
 

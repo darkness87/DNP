@@ -8,7 +8,7 @@ import java.sql.Timestamp;
 
 import org.apache.ibatis.type.JdbcType;
 
-import com.dnp.home.util.AMIDate;
+import com.dnp.home.util.DNPDate;
 
 public class DateToStringTypeHandler implements org.apache.ibatis.type.TypeHandler<String> {
 	@Override
@@ -37,8 +37,8 @@ public class DateToStringTypeHandler implements org.apache.ibatis.type.TypeHandl
 
 	private String timestampToString(Timestamp ts) {
 		if (ts != null) {
-			AMIDate hdDate = new AMIDate(ts.getTime());
-			return hdDate.toString(AMIDate.DATE_TYPE + AMIDate.TIME_TYPE + AMIDate.SECOND_TYPE, AMIDate.SYSTEM, " ");
+			DNPDate hdDate = new DNPDate(ts.getTime());
+			return hdDate.toString(DNPDate.DATE_TYPE + DNPDate.TIME_TYPE + DNPDate.SECOND_TYPE, DNPDate.SYSTEM, " ");
 		} else {
 			return "";
 		}
