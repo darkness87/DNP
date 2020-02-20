@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cnu.amisystem.mapper.EquipMapper">
+	<resultMap id="dcuMap" type="com.cnu.amisystem.vo.DcuVO">
+		<result property="dcuId" column="DID"/>
+		<result property="regionSeq" column="REGION_SEQ"/>
+		<result property="fepIp" column="FEP_IP"/>
+		<result property="fepPort" column="FEP_PORT"/>
+		<result property="ducIp" column="DCU_IP"/>
+		<result property="dcuPort" column="DCU_PORT"/>
+		<result property="macA" column="MAC_A"/>
+		<result property="macB" column="MAC_B"/>
+		<result property="macC" column="MAC_C"/>
+		<result property="dcuTime" column="ITIME"/>
+		<result property="dcuVersion" column="FWV"/>
+		<result property="wanCode" column="WAN_CODE"/>
+		<result property="commCode" column="COMM_CODE"/>
+		<result property="trapCode" column="T_MARK"/>
+		<result property="meterCycle" column="SM_P"/>
+		<result property="meterLPCycle" column="SMLP_P"/>
+		<result property="eMeterLPCycle" column="EMLP_P"/>
+		<result property="gMeterLPCycle" column="GMLP_P"/>
+		<result property="eaMeterLPCycle" column="EAMLP_P"/>
+		<result property="gMeterAvgVACycle" column="GM_AVE_VA_P"/>
+		<result property="gMeterInstVACycle" column="GM_INST_VA_P"/>
+		<result property="eaMeterAvgVACycle" column="EAM_AVE_VA_P"/>
+		<result property="eaMeterInstVACycle" column="EAM_INST_VA_P"/>
+		<result property="versionBuildCode" column="F_BUILD"/>
+		<result property="packetLength" column="P_LENGTH"/>
+		<result property="timeOut" column="TIME_OUT"/>
+		<result property="trapInterval" column="TRAP_INTERVAL"/>
+		<result property="eMeterTimeErrorLimit" column="E_MTIME_ERROR_LIMIT"/>
+		<result property="gMeterTimeErrorLimit" column="G_MTIME_ERROR_LIMIT"/>
+		<result property="eaMeterTimeErrorLimit" column="EA_MTIME_ERROR_LIMIT"/>
+		<result property="eMeterTimeCycle" column="EM_TIME_P"/>
+		<result property="gMeterTimeCycle" column="GM_TIME_P"/>
+		<result property="eaMeterTimeCycle" column="EAM_TIME_P"/>
+		<result property="cpuReset" column="CPU_RESET"/>
+		<result property="pinId" column="PNID"/>
+		<result property="authCodeRO" column="ACODE_RO"/>
+		<result property="authCodeRW" column="ACODE_RW"/>
+		<result property="snmpPasswordRO" column="SNMP_PW_RO"/>
+		<result property="snmpPasswordRW" column="SNMP_PW_RW"/>
+		<result property="registDate" column="WDATE"/>
+
+		<!-- not in DB Table -->
+		<result property="meterCount" column="METER_COUNT"/>
+		<result property="area1" column="AREA1"/>
+		<result property="area2" column="AREA2"/>
+		<result property="area3" column="AREA3"/>
+	</resultMap>
+	<resultMap id="meterMap" type="com.cnu.amisystem.vo.MeterVO">
+		<result property="dcuId" column="DID"/>
+		<result property="meterId" column="METER_ID"/>
+		<result property="macAddr" column="MAC_ADDR"/>
+		<result property="deviceName" column="DEVICE_NAME"/>
+		<result property="activePowerConst" column="ACON"/>
+		<result property="reActivePowerConst" column="RCON"/>
+		<result property="meterReadingDay" column="MRD"/>
+		<result property="dcuTime" column="ITIME"/>
+		<result property="meterTime" column="MTIME"/>
+		<result property="lpPeriod" column="LP_PERIOD"/>
+		<result property="apparentPowerConst" column="PCON"/>
+		<result property="netMetering" column="NET_METERING"/>
+		<result property="isDelete" column="IS_DELETE"/>
+		<result property="registDate" column="WDATE"/>
+		<result property="modifyDate" column="UDATE"/>
+
+		<!-- not in DB Table -->
+		<result property="area1" column="AREA1"/>
+		<result property="area2" column="AREA2"/>
+		<result property="area3" column="AREA3"/>
+	</resultMap>
+	<resultMap id="transformerMap" type="com.cnu.amisystem.vo.TransformerVO">
+		<result property="dcuId" column="DID"/>
+		<result property="transformerId" column="TID"/>
+		<result property="transformerVolumeA" column="KVA_A"/>
+		<result property="transformerVolumeB" column="KVA_B"/>
+		<result property="transformerVolumeC" column="KVA_C"/>
+		<result property="undervoltLowerLimit" column="OUTAGEVOL"/>
+		<result property="transformerDivision" column="NUMPHASE"/>
+		<result property="period" column="PERIOD"/>
+		<result property="TDU" column="CONSTANT"/>
+
+		<!-- not in DB Table -->
+		<result property="area1" column="AREA1"/>
+		<result property="area2" column="AREA2"/>
+		<result property="area3" column="AREA3"/>
+	</resultMap>
+</mapper>

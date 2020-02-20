@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cnu.amisystem.mapper.UserMapper">
+	<resultMap id="userMap" type="com.cnu.amisystem.vo.UserVO">
+		<result property="loginId" column="UID"/>
+		<result property="password" column="UPW"/>
+		<result property="type" column="UTYPE"/>
+		<result property="name" column="UNAME"/>
+		<result property="registDate" column="WDATE"/>
+		<result property="lastDate" column="LDATE"/>
+		<result property="createDateFormat" column="create_date" typeHandler="com.cnu.amisystem.vo.mybatis.support.DateToStringTypeHandler"/>
+		<result property="modifyDateFormat" column="modify_date" typeHandler="com.cnu.amisystem.vo.mybatis.support.DateToStringTypeHandler"/>
+		<result property="reportDateFormat" column="report_date" typeHandler="com.cnu.amisystem.vo.mybatis.support.DateToStringTypeHandler"/>
+		<result property="endDateFormat" column="end_date" typeHandler="com.cnu.amisystem.vo.mybatis.support.DateToStringTypeHandler"/>
+	</resultMap>
+	<sql id="User-COLUMNS">
+		UID, UPW, UTYPE, UNAME, WDATE, LDATE
+	</sql>
+	<insert id="insertUser">
+		insert into USER_INFO (<include refid="User-COLUMNS"/>)
+		values 
+		(
+			#{loginId}, #{password}, #{type}, #{name}, #{registDate}, #{lastDate}
+		)
+	</insert>
+	<update id="updateDateUser" parameterType="HashMap">
+		update USER_INFO
+		   set LDATE = #{lastDate}
+		 where UID = #{loginId}
+	</update>
+	<select id="selectAllUser" resultMap="userMap"> <!-- resultType -->
+		select * from USER_INFO
+	</select>
+	<select id="selectUser" parameterType="String" resultMap="userMap">
+		select * from USER_INFO where UID = #{userId}
+	</select>
+</mapper>
+<!-- 
+<configuration>
+	여러가지 기본 옵션을 지정합니다.
+	<settings>
+		필드 속성이 READ_COUNT 처럼 언더 스코어가 있을 때 VO 의 readCount 처럼 카멜 케이스로 변환 되게 
+			합니다.
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+
+	<typeAliases>
+		<typeAlias alias="userVO" type="com.cnu.amisystem.vo.UserInfoVO" />
+	</typeAliases>
+</configuration> -->

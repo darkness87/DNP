@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cnu.amisystem.mapper.EquipMapper">
+	<sql id="Dcu-COLUMNS">
+		DID, REGION_SEQ, FEP_IP, FEP_PORT, DCU_IP,
+		DCU_PORT, MAC_A, MAC_B, MAC_C, ITIME, 
+		FWV, WAN_CODE, COMM_CODE, T_MASK, SM_P, 
+		SMLP_P, GMLP_P, EAMLP_P, GM_AVE_VA_P, GM_INST_VA_P, 
+		EAM_INST_VA_P, F_BUILD, P_LENGTH, TIME_OUT, TRAP_INTERVAL, 
+		E_MTIME_ERROR_LIMIT, G_MTIME_ERROR_LIMIT, EA_MTIME_ERROR_LIMIT, EM_TIME_P, GM_TIME_P, 
+		EAM_TIME_P, CPU_RESET_ENUM, PINID, ACODE_RO, ACODE_RW, 
+		SNMP_PW_RO, SNMP_PW_RW, WDATE
+	</sql>
+	<select id="selectDcuList" resultMap="dcuMap"> <!-- resultType -->
+		select REG.AREA1, REG.AREA2, REG.AREA3
+			, (case when METER.COUNT is null then '0' else METER.COUNT END) as METER_COUNT
+		    , DCU.*
+		  from DCU_INFO DCU
+		  left join(select L4.SEQ
+						, L2.RNAME as AREA1
+						, L3.RNAME as AREA2
+						, L4.RNAME as AREA3
+					  from REGION as L1
+					  join REGION as L2
+						on L1.SEQ = L2.PID
+					  join REGION as L3
+						on L2.SEQ = L3.PID
+					  join REGION as L4
+						on L3.SEQ = L4.PID) REG
+			on DCU.REGION_SEQ = REG.SEQ
+		  left join(select DID, count(*) as COUNT
+					  from METER_INFO
+					 group by did) METER
+			on DCU.DID = METER.DID
+	</select>
+</mapper>
