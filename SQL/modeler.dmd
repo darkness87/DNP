@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="modeler" id="635CB8BB-8F4B-8C53-D819-C6EFC71CE63C" version="3.5">
+<createdBy>darkl</createdBy>
+<createdTime>2020-02-21 06:48:36 UTC</createdTime>
+<ownerDesignName>modeler</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>635CB8BB-8F4B-8C53-D819-C6EFC71CE63C</designId>
+</OSDM_Design>
