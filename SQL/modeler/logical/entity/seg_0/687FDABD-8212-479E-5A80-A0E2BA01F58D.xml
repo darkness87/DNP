@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="687FDABD-8212-479E-5A80-A0E2BA01F58D" name="user">
+<createdBy>darkl</createdBy>
+<createdTime>2020-02-21 07:44:28 UTC</createdTime>
+<generatorID>302F491F-4C03-5495-A1BD-2633F6CA62E8</generatorID>
+<ownerDesignName>modeler</ownerDesignName>
+<engineerTo>
+<item key="FE3EAAFF-7379-B5D9-B475-369CDC563BC3" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="9D78F9E9-84EF-F78C-11B6-6D2B67E06BD2">
+<createdBy>darkl</createdBy>
+<createdTime>2020-02-21 07:44:28 UTC</createdTime>
+<commentInRDBMS><![CDATA[사용자 ID]]></commentInRDBMS>
+<generatorID>67BA1FA2-60B1-69A5-CD50-4ABC419A737D</generatorID>
+<ownerDesignName>modeler</ownerDesignName>
+<engineerTo>
+<item key="FE3EAAFF-7379-B5D9-B475-369CDC563BC3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="password" id="3451DA44-4D78-6B5F-FAF0-B297182FB76E">
+<createdBy>darkl</createdBy>
+<createdTime>2020-02-21 07:44:28 UTC</createdTime>
+<commentInRDBMS><![CDATA[사용자 PW]]></commentInRDBMS>
+<generatorID>FBC58C60-9652-85A1-89BB-BA8571402D8D</generatorID>
+<ownerDesignName>modeler</ownerDesignName>
+<engineerTo>
+<item key="FE3EAAFF-7379-B5D9-B475-369CDC563BC3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="54536A73-5CDB-35AB-B7C5-BB46C105972A">
+<createdBy>darkl</createdBy>
+<createdTime>2020-02-21 07:44:28 UTC</createdTime>
+<commentInRDBMS><![CDATA[사용자 명]]></commentInRDBMS>
+<generatorID>B2A2E3DA-EFB8-42FE-5217-1A33BCFD3293</generatorID>
+<ownerDesignName>modeler</ownerDesignName>
+<engineerTo>
+<item key="FE3EAAFF-7379-B5D9-B475-369CDC563BC3" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="recently date" id="5E02D064-7559-2ABB-EBA4-E80AB35CECF2">
+<createdBy>darkl</createdBy>
+<createdTime>2020-02-21 07:44:28 UTC</createdTime>
+<commentInRDBMS><![CDATA[사용자 마지막 로그인 시간]]></commentInRDBMS>
+<generatorID>3D5BF1BB-1288-4C36-355B-577A18397A9F</generatorID>
+<ownerDesignName>modeler</ownerDesignName>
+<engineerTo>
+<item key="FE3EAAFF-7379-B5D9-B475-369CDC563BC3" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

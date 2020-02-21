@@ -5,7 +5,7 @@
 
 
 
-CREATE TABLE "user" (
+CREATE TABLE dnp_user (
     id             VARCHAR2(20 BYTE) NOT NULL,
     password       VARCHAR2(20 BYTE) NOT NULL,
     name           VARCHAR2(20 BYTE),
@@ -13,34 +13,34 @@ CREATE TABLE "user" (
     recently_date  TIMESTAMP DEFAULT SYSTIMESTAMP NOT NULL
 );
 
-ALTER TABLE "user"
+ALTER TABLE dnp_user
     ADD CHECK ( auth IN (
         'Admin',
         'User'
     ) );
 
-COMMENT ON COLUMN "user".id IS
+COMMENT ON COLUMN dnp_user.id IS
     '사용자 ID';
 
-COMMENT ON COLUMN "user".password IS
+COMMENT ON COLUMN dnp_user.password IS
     '사용자 PW';
 
-COMMENT ON COLUMN "user".name IS
+COMMENT ON COLUMN dnp_user.name IS
     '사용자 명';
 
-COMMENT ON COLUMN "user".auth IS
+COMMENT ON COLUMN dnp_user.auth IS
     '권한 (Admin, User)';
 
-COMMENT ON COLUMN "user".recently_date IS
+COMMENT ON COLUMN dnp_user.recently_date IS
     '사용자 마지막 로그인 시간';
 
 CREATE UNIQUE INDEX user_1 ON
-    "user" (
+    dnp_user (
         id
     ASC );
 
 CREATE INDEX user_2 ON
-    "user" (
+    dnp_user (
         name
     ASC );
 
