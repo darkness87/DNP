@@ -1,8 +1,8 @@
 정의(도)&amp;이(평)복의 연구소
 
-AMI System 개발 가이드
+DNP Service 개발 가이드
 ===================
-개발하기 앞서서 개발자로써 CNU Global 코드의 정규화 및 코드의 일관성을 유지시키기 위하여 일부 규칙을 지키길 바라며 작성합니다.
+개발하기 앞서서 개발자로써 코드의 정규화 및 코드의 일관성을 유지시키기 위하여 일부 규칙을 지키길 바라며 작성합니다.
 순서와 연관없이 생각나는데로 작성하기에 앞뒤가 안 맞을수 있으나 꼭 필요한 내용들이니 준수하여주시기 부탁드립니다.
 
 > **필자가 전하는말:**
@@ -69,14 +69,14 @@ AMI System 개발 가이드
 - 웹상의 모든 리소스 코드는 다국어 지원하기 위하여 다음과 같이 적용한다.
   - html를 사용하는 경우 `jstl`의 `fmt`태그를 사용
     ```html
-    <span><fmt:message key="ami.product.name"/></span>
+    <span><fmt:message key="dnp.product.name"/></span>
     ```
   - javascript를 사용하는 경우 .../js/res/resController.js를 참조하여 사용한다.
     ```javascript
-    var home = AMI_RES.get("ami_menu_home");
+    var home = DNP_RES.get("dnp_menu_home");
     // 치환 문자는 다음과 같이 처리한다. {n}
-    var msg = AMI_RES.get("ami_msg_must_select", "지역코드");	// {1}는(은) 반드시 선택해주세요.
-    var msg = AMI_RES.get("ami_msg_must_select", "지역코드", "아파트명", ...);	// {1}는(은) 반드시 선택해주세요. {2}도 채워주세요! n개 만큼 치환가능합니다.
+    var msg = DNP_RES.get("dnp_msg_must_select", "지역코드");	// {1}는(은) 반드시 선택해주세요.
+    var msg = DNP_RES.get("dnp_msg_must_select", "지역코드", "아파트명", ...);	// {1}는(은) 반드시 선택해주세요. {2}도 채워주세요! n개 만큼 치환가능합니다.
     ```
 - javascript 코드내에서 html 코드를 직접 사용하는 방식은 지양한다.
   - javascript 코드내에서 html 코드를 조합하는 경우엔 PAGE_CONTROLLER을 사용하여 조합한다.
@@ -100,13 +100,13 @@ AMI System 개발 가이드
   function showDcuList() {
 	// jsp페이지 호출 구문
 	var viewName = "equipmentDcu"
-	AMI_PROXY.invokeOpenAPI(viewName, "html", param, function(result, _params) {
+	DNP_PROXY.invokeOpenAPI(viewName, "html", param, function(result, _params) {
 		$("#mainBody").html(result);
 		getDcuList();
 	}
   }
   function getDcuList() {
-	AMI_PROXY.invokeOpenAPI("getDcuList", "json", param, renderDcuList);
+	DNP_PROXY.invokeOpenAPI("getDcuList", "json", param, renderDcuList);
   }
   function renderDcuList(result, _head, params) {
 	if (result.dataList != null) {
@@ -129,7 +129,7 @@ AMI System 개발 가이드
 > **Tip:** 개인적으로 보고 가야한다 싶은 목록들만 정리하였기에 원하는 클래스에 대한 설명이 없을 수 있습니다.
 
   ```
-  <script type="text/javascript" src="/ami/js/amiProxy.js"></script>
+  <script type="text/javascript" src="/dnp/js/dnpProxy.js"></script>
   ```
 
 
