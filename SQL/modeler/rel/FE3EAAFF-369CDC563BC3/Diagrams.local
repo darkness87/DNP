@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="main_view" objectID="7E793B8C-7463-6BA9-937F-FE9BB93888E4" name="DNP Service" visible="true"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

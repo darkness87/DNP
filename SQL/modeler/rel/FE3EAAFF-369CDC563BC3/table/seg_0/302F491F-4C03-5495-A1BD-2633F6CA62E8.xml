@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="302F491F-4C03-5495-A1BD-2633F6CA62E8" name="user">
+<createdBy>darkl</createdBy>
+<createdTime>2020-02-21 07:03:18 UTC</createdTime>
+<ownerDesignName>modeler</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<existDependencyConstraintName>auth_dep</existDependencyConstraintName>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="67BA1FA2-60B1-69A5-CD50-4ABC419A737D">
+<createdBy>darkl</createdBy>
+<createdTime>2020-02-21 07:06:22 UTC</createdTime>
+<commentInRDBMS><![CDATA[사용자 ID]]></commentInRDBMS>
+<ownerDesignName>modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="password" id="FBC58C60-9652-85A1-89BB-BA8571402D8D">
+<createdBy>darkl</createdBy>
+<createdTime>2020-02-21 07:06:22 UTC</createdTime>
+<commentInRDBMS><![CDATA[사용자 PW]]></commentInRDBMS>
+<ownerDesignName>modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="B2A2E3DA-EFB8-42FE-5217-1A33BCFD3293">
+<createdBy>darkl</createdBy>
+<createdTime>2020-02-21 07:06:22 UTC</createdTime>
+<commentInRDBMS><![CDATA[사용자 명]]></commentInRDBMS>
+<ownerDesignName>modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="auth" id="B7E3A5CC-D0FD-1F5D-0626-EAAD595FCAAE">
+<createdBy>darkl</createdBy>
+<createdTime>2020-02-21 07:06:22 UTC</createdTime>
+<commentInRDBMS><![CDATA[권한 (Admin, User)]]></commentInRDBMS>
+<ownerDesignName>modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="Admin" description="관리자"/>
+<valueDef value="User" description="사용자"/>
+</listOfValues>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isDiscriminatorColumn>true</isDiscriminatorColumn>
+</Column>
+<Column name="recently_date" id="3D5BF1BB-1288-4C36-355B-577A18397A9F">
+<createdBy>darkl</createdBy>
+<createdTime>2020-02-21 07:06:22 UTC</createdTime>
+<commentInRDBMS><![CDATA[사용자 마지막 로그인 시간]]></commentInRDBMS>
+<ownerDesignName>modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="053E727A-959C-10D0-769D-383DAA93E948" name="user_1">
+<createdBy>darkl</createdBy>
+<createdTime>2020-02-21 07:06:22 UTC</createdTime>
+<ownerDesignName>modeler</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="67BA1FA2-60B1-69A5-CD50-4ABC419A737D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DBC139EC-2826-D2E5-8789-82DBAB598261" name="user_2">
+<createdBy>darkl</createdBy>
+<createdTime>2020-02-21 07:06:22 UTC</createdTime>
+<ownerDesignName>modeler</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B2A2E3DA-EFB8-42FE-5217-1A33BCFD3293"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
