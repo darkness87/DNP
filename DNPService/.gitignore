@@ -3,3 +3,8 @@
 .settings
 target
 .classpath
+/npm-build.txt
+/npm-install.txt
+vue
+.vscode
+.tern-project

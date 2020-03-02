@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<!DOCTYPE xml>
+<project name="amisystem-extends" default="deploy" basedir=".">
+	<target name="npm-install">
+		<exec dir="./vue" executable="cmd.exe" output="npm-install.txt">
+			<arg line="/c npm install"/>
+		</exec>
+	</target>
+
+	<target name="npm-build">
+		<exec dir="./vue" executable="cmd.exe" output="npm-build.txt">
+			<arg line="/c npm run build"/>
+		</exec>
+	</target>
+
+	<target name="deploy"></target>
+</project>
