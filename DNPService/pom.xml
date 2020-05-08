@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.dnp</groupId>
-	<artifactId>home</artifactId>
+	<artifactId>DNPSevice</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
 	<name>DNPService</name>
