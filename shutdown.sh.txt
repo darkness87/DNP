@@ -1,0 +1,6 @@
+ps -elf | grep handy83 | grep java | grep DtomcatHandy83_1 | grep -v grep | awk '{print $4}' |
+while read PID
+do
+        echo "Killing $PID ..."
+        kill -9 $PID
+done
