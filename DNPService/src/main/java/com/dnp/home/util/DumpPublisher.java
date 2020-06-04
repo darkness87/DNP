@@ -92,9 +92,11 @@ public class DumpPublisher implements Serializable {
 				fieldType = fields[i].getType(); // parasoft-suppress SECURITY.WSC.APIBS "trusted code"  //FIXED
 
 				if (fieldType == byte.class) {
+					byte[] b = new byte[1]; 
+					b[0] = fields[i].getByte(obj);
 					sbDump.append(fields[i].getName()) // parasoft-suppress SECURITY.WSC.APIBS "trusted code"  //FIXED
 						  .append("\t[")
-						  .append((new Character((char) fields[i].getByte(obj)))) // parasoft-suppress SECURITY.WSC.APIBS "trusted code"  //FIXED
+						  .append(new String(b)) // parasoft-suppress SECURITY.WSC.APIBS "trusted code"  //FIXED
 						  .append("]\n");
 				} else if (fieldType == char.class) {
 					sbDump.append(fields[i].getName()) // parasoft-suppress SECURITY.WSC.APIBS "trusted code"  //FIXED
