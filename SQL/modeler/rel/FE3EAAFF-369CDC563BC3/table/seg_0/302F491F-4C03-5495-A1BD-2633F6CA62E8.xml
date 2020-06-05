@@ -76,6 +76,17 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4A32C60F-455B-16F1-98D0-9ECFAC8338F6" name="dnp_user_PK">
+<createdBy>darkl</createdBy>
+<createdTime>2020-06-05 12:46:01 UTC</createdTime>
+<ownerDesignName>modeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="67BA1FA2-60B1-69A5-CD50-4ABC419A737D"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="053E727A-959C-10D0-769D-383DAA93E948" name="user_1">
 <createdBy>darkl</createdBy>
 <createdTime>2020-02-21 07:06:22 UTC</createdTime>

@@ -1,0 +1,139 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="52AA7396-86ED-E57C-7D7E-EDEC74C11430" name="product">
+<createdBy>darkl</createdBy>
+<createdTime>2020-06-05 12:18:58 UTC</createdTime>
+<ownerDesignName>modeler</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="pid" id="18FEE6DC-48FA-8D7E-B399-ED72B513EAA4">
+<createdBy>darkl</createdBy>
+<createdTime>2020-06-05 12:42:52 UTC</createdTime>
+<ownerDesignName>modeler</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="DA114222-79B4-76F6-A3DC-452ABD62FA8A">
+<createdBy>darkl</createdBy>
+<createdTime>2020-06-05 12:42:52 UTC</createdTime>
+<ownerDesignName>modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60 BYTE</dataTypeSize>
+<ownDataTypeParameters>60 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="price" id="A82E7752-9C4F-F08B-F423-85DB29024D17">
+<createdBy>darkl</createdBy>
+<createdTime>2020-06-05 12:42:52 UTC</createdTime>
+<ownerDesignName>modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="sale" id="1A246DF3-11B3-2495-C51D-FEBB29906665">
+<createdBy>darkl</createdBy>
+<createdTime>2020-06-05 12:42:52 UTC</createdTime>
+<ownerDesignName>modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="force_price" id="9022344F-3FA3-1831-4BB5-BD2CC2F49C70">
+<createdBy>darkl</createdBy>
+<createdTime>2020-06-05 12:42:52 UTC</createdTime>
+<ownerDesignName>modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="create_date" id="8FBC5E02-F43E-230B-3DF5-059CED65E12E">
+<createdBy>darkl</createdBy>
+<createdTime>2020-06-05 12:48:31 UTC</createdTime>
+<ownerDesignName>modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="modify_date" id="63958EB7-45B0-F917-6D38-3FDC38F845C5">
+<createdBy>darkl</createdBy>
+<createdTime>2020-06-05 12:48:31 UTC</createdTime>
+<ownerDesignName>modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="option1" id="F38DCDC2-4595-C0BF-5BF6-0BCE07F75362">
+<createdBy>darkl</createdBy>
+<createdTime>2020-06-05 12:42:52 UTC</createdTime>
+<ownerDesignName>modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="option2" id="4FC85449-AF94-B8E0-18D5-F299680CAB67">
+<createdBy>darkl</createdBy>
+<createdTime>2020-06-05 12:48:31 UTC</createdTime>
+<ownerDesignName>modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="creator" id="58DDD8A2-5247-7C3D-FC98-F8BBE2ADC17B">
+<createdBy>darkl</createdBy>
+<createdTime>2020-06-05 14:14:09 UTC</createdTime>
+<ownerDesignName>modeler</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4278B4B2-8BD7-6D96-2395-2583648C50F5" name="product_PK">
+<createdBy>darkl</createdBy>
+<createdTime>2020-06-05 12:42:52 UTC</createdTime>
+<ownerDesignName>modeler</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="18FEE6DC-48FA-8D7E-B399-ED72B513EAA4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
